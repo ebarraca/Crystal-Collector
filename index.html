@@ -28,18 +28,17 @@
 	</div>	
 
 	<div class="your-score">
-	<p>Your total score is:
-		<span class ="score-number"></span>
+	<p>Your total score is:<span class ="score-number"></span>
 		</p>
 	</div>
 
 </div>
 
 <div class="crystal-container">
-	<button id = "crystal1"><img src = "assets/crystal1.png" width= "150" >
-	<button id = "crystal2"><img src = "assets/crystal2.png" height= "150">
-	<button id = "crystal3"><img src = "assets/crystal3.png" height= "150">
-	<button id = "crystal4"><img src = "assets/crystal4.png" height= "170">
+	<button id="crystal1"><img src = "assets/crystal1.png" width= "150" >
+	<button id="crystal2"><img src = "assets/crystal2.png" height= "150">
+	<button id="crystal3"><img src = "assets/crystal3.png" height= "150">
+	<button id="crystal4"><img src = "assets/crystal4.png" height= "170">
 </div>
 
 
@@ -54,7 +53,9 @@
      //when user guess is the same as the random number you win; when user guess is greater than the random number you lose
      //when the game ends, random compute number resets and new numbers are assigned to the buttons
 
-	var crystal1;
+    $( document ).ready(function() {
+
+	var crystal1 = 1
     var crystal2;
     var crystal3;
     var crystal4;
@@ -74,52 +75,46 @@
     
 
  	function randomizeNumbers(){
- 		crystal1 = Math.floor(Math.random() * 12) + 1;
- 		$("#crystal1").attr("value", crystal1);
+
+ 		crystal2 = Math.floor(Math.random() * 12) + 1;
+ 		$("#crystal2").attr("value", crystal2);
+
+ 		crystal3 = Math.floor(Math.random() * 12) + 1;
+ 		$("#crystal3").attr("value", crystal3);
+
+ 		 crystal4 = Math.floor(Math.random() * 12) + 1;
+ 		$("#crystal4").attr("value", crystal4);
 
  	}
- 		randomizeNumbers();
- 		console.log(randomizeNumbers);
 
- 		$("#crystal1").on("click", function(){
- 			crystal1+=Number($("#crystal1").attr());
- 			$(".your-score").text(crystal1);
+	randomizeNumbers();
 
- 		})
+	$("#crystal1").on("click", function(){
+		counter+=crystal1;
+		$(".score-number").text(counter);
+	})
+		$("#crystal2").on("click", function(){
+		counter+=crystal2;
+		$(".score-number").text(counter);
+	})
+
+		$("#crystal3").on("click", function(){
+		counter+=crystal3;
+		$(".score-number").text(counter);
+	})
+
+		$("#crystal4").on("click", function(){
+		counter+=crystal3;
+		$(".score-number").text(counter);
+	})
 
 
 
- //    function randomizeNumbers(){
- // 		crystal1 = Math.floor(Math.random() * 12) + 1;
- // 		$("#crystal1").attr("value", crystal1);
-
- // 	}
- // 	randomizeNumbers();
-
-	// $(".crystal-image").on("click", function() {
-	// 	var crystalValue = ($(this).attr("crystal1"));
- //    crystalValue = parseInt(crystalValue);
- //    counter += crystalValue;
+})
 
 
  	
 
-
-      // $("#crystal1").on("click", function() {
-      // 	// $(".your-score").prepend(crystal1);
-      // 	crystal1+=crystal1;
-      // 	$(".score-number").text(crystal1);
-      // })
- 
-
-
-
-      
-
-      // function adder() {
-      // 	$(crystal1+=crystal1);
-      // }
-      // adder(crystal1);
 
 
     //   //win/losses
