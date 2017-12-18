@@ -23,12 +23,12 @@
 	</div>
 
 	<div class="score"> 
-		<p>Wins: </p>
-		<p>Losses: </p>
+		<p id="wins">Wins: </p>
+		<p id="losses">Losses: </p>
 	</div>	
 
 	<div class="your-score">
-	<p>Your total score is:<span class ="score-number"></span>
+	<p>Your total score is:<br><span class ="score-number"></span></br>
 		</p>
 	</div>
 
@@ -61,19 +61,21 @@
     var crystal4;
 
     var counter = 0;
+
     var wins = 0;
     var losses = 0;
     var randomNumber = Math.floor(Math.random() * 120) + 19;
-		$(".random-number").prepend(randomNumber);
-     
+		$(".random-number").text(randomNumber);
 
-    // var crystal1 = Math.floor(Math.random() * 12) + 1;
-    // var crystal2 = Math.floor(Math.random() * 12) + 1;
-    // var crystal3 = Math.floor(Math.random() * 12) + 1;
-    // var crystal4 = Math.floor(Math.random() * 12) + 1;
+	var reset = function(){
+		randomNumber = Math.floor(Math.random() * 120) + 19;
+		$(".random-number").text(randomNumber);
+		crystal1 = 1;
+		counter = 0;
+		randomizeNumbers();
+	}
 
-    
-
+	
  	function randomizeNumbers(){
 
  		crystal2 = Math.floor(Math.random() * 12) + 1;
@@ -92,25 +94,58 @@
 	$("#crystal1").on("click", function(){
 		counter+=crystal1;
 		$(".score-number").text(counter);
+
+		checkIfGameOver(counter, randomNumber);
+
 	})
 		$("#crystal2").on("click", function(){
 		counter+=crystal2;
 		$(".score-number").text(counter);
+
+		checkIfGameOver(counter, randomNumber);
+
 	})
 
 		$("#crystal3").on("click", function(){
 		counter+=crystal3;
 		$(".score-number").text(counter);
+
+		checkIfGameOver(counter, randomNumber);
+
 	})
 
 		$("#crystal4").on("click", function(){
 		counter+=crystal3;
 		$(".score-number").text(counter);
+
+		checkIfGameOver(counter, randomNumber);
+
 	})
 
+	function checkIfGameOver(counter, randomNumber){
+	if(counter === randomNumber) {
+         wins++;
 
+         $("#wins").text("Wins:" + wins);
+
+    } 
+    else if (counter >= randomNumber) {
+         losses++;
+         
+         $("#losses").text("Losses:" + losses);
+
+     if (counter >= randomNumber){
+     	reset()
+     }     
+
+   } 
+}
 
 })
+
+
+
+
 
 
  	
