@@ -127,54 +127,21 @@
          wins++;
 
          $("#wins").text("Wins:" + wins);
+          reset()
+
 
     } 
-    else if (counter >= randomNumber) {
+    else if (counter > randomNumber) {
          losses++;
          
          $("#losses").text("Losses:" + losses);
-
-     if (counter >= randomNumber){
-     	reset()
+         reset()
      }     
 
    } 
-}
+
 
 })
-
-
-
-
-
-
- 	
-
-
-
-    //   //win/losses
-    //         function adder() {
-    //   	$(crystal1+=crystal1);
-    //   }
-    //   adder(crystal1);
-
-
-
-    //   //win/losses
-    // if(yourScore === randomNumber) {
-    //      wins++;
-  
-    // } 
-    // else if (yourScore >== randomNumber) {
-    //      losses++;
-    // }
-
-
-
-
-
-
-
 
 </script>
 
