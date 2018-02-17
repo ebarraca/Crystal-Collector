@@ -3,7 +3,7 @@
 <head>
  <meta charset="UTF-8">
  <link rel="stylesheet" type="text/css" href="style.css">
- <title>Crystal Collectors Game</title>
+ <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Crimson+Text|Julius+Sans+One|Montserrat" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body background=assets/background.jpg>
@@ -22,10 +22,10 @@
 	<div class="random-number">
 	</div>
 
-	<div class="score"> 
+	<div class="score">
 		<p id="wins">Wins: </p>
 		<p id="losses">Losses: </p>
-	</div>	
+	</div>
 
 	<div class="your-score">
 	<p>Your total score is:<br><span class ="score-number"></span></br>
@@ -75,7 +75,7 @@
 		randomizeNumbers();
 	}
 
-	
+
  	function randomizeNumbers(){
 
  		crystal2 = Math.floor(Math.random() * 12) + 1;
@@ -130,15 +130,15 @@
           reset()
 
 
-    } 
+    }
     else if (counter > randomNumber) {
          losses++;
-         
+
          $("#losses").text("Losses:" + losses);
          reset()
-     }     
+     }
 
-   } 
+   }
 
 
 })
